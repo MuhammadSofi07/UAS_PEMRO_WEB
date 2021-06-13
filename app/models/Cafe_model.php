@@ -1,25 +1,36 @@
-<?php
+<?php 
 
 class Cafe_model {
-    private $table = 'cafe';
-    private $db;
-
-    public function __construct()
-    {
-        $this->db = new Database;
-    }
+    private $cfe [
+        [
+            "Nama Cafe" => "Otten Coffee",
+            "Alamat" => "Jakarta Utara",
+            "Kelas" => "Menengah",
+            "Harga Menu" => "80K - 120K"
+        ],
+        [
+            "Nama Cafe" => "Talk Coffee",
+            "Alamat" => "Pasuruan",
+            "Kelas" => "Merakyat",
+            "Harga Menu" => "15K - 30K"
+        ],
+        [
+            "Nama Cafe" => "Barn Coffee",
+            "Alamat" => "Bekasi",
+            "Kelas" => "Menengah",
+            "Harga Menu" => "70K - 100K"
+        ],
+        [
+            "Nama Cafe" => "SQL Coffee",
+            "Alamat" => "Pasuruan",
+            "Kelas" => "Merakyat",
+            "Harga Menu" => "10K - 25K"
+        ]
+    ];
 
     public function getAllCafe()
     {
-        $this->db->query('SELECT * FROM ' . $this->table);
-        return $this->db->resultSet();
+        return $this->cfe;
     }
-
-    public function getCafeById($id)
-    {
-        $this->db->query('SELECT * FROM ' . $this->table . 'WHERE id=:id');
-        $this->db->bind('id', $id);
-        return $this->db->single();
-    }
-
 }
+        
