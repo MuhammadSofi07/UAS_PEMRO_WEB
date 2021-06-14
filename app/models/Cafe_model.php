@@ -1,36 +1,32 @@
-<?php 
+<?php
 
 class Cafe_model {
-    private $cfe [
+    private $cfe = [
         [
             "Nama Cafe" => "Otten Coffee",
-            "Alamat" => "Jakarta Utara",
-            "Kelas" => "Menengah",
-            "Harga Menu" => "80K - 120K"
-        ],
-        [
-            "Nama Cafe" => "Talk Coffee",
-            "Alamat" => "Pasuruan",
-            "Kelas" => "Merakyat",
-            "Harga Menu" => "15K - 30K"
-        ],
-        [
-            "Nama Cafe" => "Barn Coffee",
             "Alamat" => "Bekasi",
             "Kelas" => "Menengah",
-            "Harga Menu" => "70K - 100K"
+            "Harga" => "80K-120K"
         ],
         [
             "Nama Cafe" => "SQL Coffee",
             "Alamat" => "Pasuruan",
             "Kelas" => "Merakyat",
-            "Harga Menu" => "10K - 25K"
-        ]
+            "Harga" => "10K-25K"
+        ],
+        [
+            "Nama Cafe" => "Hollywings",
+            "Alamat" => "Jakarta",
+            "Kelas" => "Elite",
+            "Harga" => "300K-5JT"
+        ],
     ];
 
     public function getAllCafe()
     {
         return $this->cfe;
     }
+
+
+
 }
-        

@@ -1,7 +1,7 @@
 <?php
 
 class Cafe extends Controller {
-    public function index ()
+    public function index()
     {
         $data['judul'] = 'Daftar Cafe';
         $data['cfe'] = $this->model('Cafe_model')->getAllCafe();
@@ -9,5 +9,4 @@ class Cafe extends Controller {
         $this->view('cafe/index', $data);
         $this->view('templates/footer');
     }
-
 }
