@@ -1,30 +1,27 @@
 <?php
 
 class Cafe_model {
-    private $cfe = [
-        [
-            "Nama Cafe" => "Otten Coffee",
-            "Alamat" => "Bekasi",
-            "Kelas" => "Menengah",
-            "Harga" => "80K-120K"
-        ],
-        [
-            "Nama Cafe" => "SQL Coffee",
-            "Alamat" => "Pasuruan",
-            "Kelas" => "Merakyat",
-            "Harga" => "10K-25K"
-        ],
-        [
-            "Nama Cafe" => "Hollywings",
-            "Alamat" => "Jakarta",
-            "Kelas" => "Elite",
-            "Harga" => "300K-5JT"
-        ],
-    ];
+    private $dbh;
+    private $stmt;
+
+    public function __construct()
+    {
+
+        $dsn = 'mysql:host=127.0.0.1;dbname=phpmvc'; 
+    
+        try {
+            $this->dbh = new PDO($dsn, 'root', '');
+        } catch (PDOException $e) {
+            die($e->getMessage());
+        }
+    
+    }
 
     public function getAllCafe()
     {
-        return $this->cfe;
+        $this->stmt = $this->dbh->prepare('SELECT * FROM cafe');
+        $this->stmt->execute();
+        return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
 

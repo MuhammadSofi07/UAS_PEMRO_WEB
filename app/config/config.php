@@ -2,7 +2,7 @@
 
 define('BASEURL', 'http://localhost:8080/phpmvc/public');
 
-//DB
+// DB
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
